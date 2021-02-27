@@ -1,6 +1,8 @@
-# Modeling Cancer Metabolism Heterogeneity with MICOM
+#Modeling Cancer Metabolism Heterogeneity with MICOM
 
-You can download the modified version of micom that works with Recon2.2 from https://github.com/SantiagoMille/micom
+> You can download the modified version of micom that works with Recon2.2 from https://github.com/SantiagoMille/micom
+
+##Data and code
 
 The Python 3.7.9 notebooks used to generate each of the three reconstructions from the Recon2.2 model and transcription data can be found in the directory 'CORDA'.
 Transcription data is located in the 'Trans. Data' directory.
