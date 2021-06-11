@@ -1,4 +1,4 @@
-#Modeling Cancer Metabolism Heterogeneity with MICOM
+# Modeling Cancer Metabolism Heterogeneity with MICOM
 
 > You can download the modified version of micom that works with Recon2.2 from https://github.com/SantiagoMille/micom
 
