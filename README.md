@@ -6,11 +6,11 @@ Once you have downloaded the modified micom, install it as a python package in y
 
 ## Data and Code
 
-
+**Note:** Install Gurobi Optimizer https://www.gurobi.com/documentation/9.1/quickstart_mac/software_installation_guid.html. You can obtain a free academic license. 
 
 ### Genome-Scale Metabolic Models (GEMs) Jupyter Notebooks
 
-The Python 3.7.9 notebooks used to generate reconstructions for each of the three previosly identified cell populations based on Recon2.2 and transcription, data can be found in the directory 'CORDA'. The first iteration of reconstruction notebooks do not use Differential Expression data. On the other hand, the newest versions do use it and are labeled with **"Dif_Exp"**. Each of this notebooks have comments that explain what is being done on each step of the process.
+The Python 3.7.9 notebooks used to generate reconstructions for each of the three previosly identified cell populations based on Recon2.2 and transcription, data can be found in the directory 'CORDA'. The first iteration of reconstruction notebooks do not use Differential Expression data. On the other hand, the newest versions do use it and are labeled with **"Dif_Exp"**. For step-by-step comments on what is being done, please check any of the **"Dif_Exp"** notebooks.
 
 ### MICOM
 
