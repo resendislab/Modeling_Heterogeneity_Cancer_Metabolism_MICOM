@@ -1,16 +1,53 @@
+# Atribution
+
+Santiago Mille\
+Jorge Arellano\
+Christian Padrón\
+Aarón Vázquez\
+Osbaldo Resendis\
+[Human Systems Biology Lab](https://resendislab.github.io/)
+
+
+
 # Modeling Cancer Metabolism Heterogeneity with MICOM
 
-You can download the modified version of micom that works with Recon2.2 from https://github.com/SantiagoMille/micom.
+Given previous results, we characterized the heterogeneity in Multicellular Tumor spheroids in three subpopulations, a proliferative, a reservoir, and an invasive. Each one has complementary and nonredundant roles; you can check the publication [here](https://www.nature.com/articles/s41598-020-69026-7). Moreover, we were interested in evaluating the metabolic pathways in each subpopulation and how the metabolic routes complement each other.
+
+To couple the metabolic activity for the three subpopulations we used [MICOM](https://journals.asm.org/doi/10.1128/mSystems.00606-19). You can download the modified version of micom that works with Recon2.2 from https://github.com/SantiagoMille/micom.
 Once you have downloaded the modified micom, install it as a python package in your conda/pyenv enviroment. 
-> Run `pip install -e .` in the code's directory. 
+> Run `pip install -e .` in the code's directory.
 
-## Data and Code
+## Optimizer
+ To run CORDA you must install Gurobi Optimizer https://www.gurobi.com/documentation/9.1/quickstart_mac/software_installation_guid.html. You can obtain a free academic license. 
 
-**Note:** Install Gurobi Optimizer https://www.gurobi.com/documentation/9.1/quickstart_mac/software_installation_guid.html. You can obtain a free academic license. 
+## Imputation
 
-### Genome-Scale Metabolic Models (GEMs) Jupyter Notebooks
+## Genome-Scale Metabolic Models (GEMs) Jupyter Notebooks
 
-The Python 3.7.9 notebooks used to generate reconstructions for each of the three previosly identified cell populations based on Recon2.2 and transcription, data can be found in the directory 'CORDA'. The first iteration of reconstruction notebooks do not use Differential Expression data. On the other hand, the newest versions do use it and are labeled with **"Dif_Exp"**. For step-by-step comments on what is being done, please check any of the **"Dif_Exp"** notebooks.
+The firts step was to generate a GEM for each population.The Python 3.7.9 notebook used to generate reconstructions for each of the three previosly identified cell populations based on Recon2.2 and single-cell transcription data. The notebook can be found in the folder "CORDA".
+
+### Transcriptome Data
+
+The transcriptome data used for this project is located under the 'Transcriptome Data/imputated' directory. 
+
+The "MCTS_norm_X.csv" files contain the gene expression levels of each of the three sub-populations previously identified to be part of MCF Multicellular Tumor Spheroids (https://www.nature.com/articles/s41598-020-69026-7). 
+
+The "Dif_Exp_X.csv" files contain the differential expression analysis results. We use this data to understand better which genes are being expressed and, therefore, create more accurate metabolic models.
+
+Additionally, the file named HugoV2.csv is used to map all of the metabolic genes in Recon2.2 (HUGO IDs = HGNC) to the genes on the expression matrices (gene symbols). E.g. HGNC:23647 -> ADGRE3.
+
+### CORDA Generated GEMs 
+
+The resulting individual metabolic reconstructions (SBML files) are located in 'SBMLs'. These reconstructions are used as inputs to create a MICOM object, which is the engine we use to simulate a colony (diffents sub-populations and their interactions) and optimize community growth. 
+
+The SBML files are: 
+ - cobraA.xml
+ - cobraB.xml
+ - cobraC.xml
+
+##### Under review
+The python notebooks used to run micom can be found in directory micom. The file "analysis-w-micom" is where single reaction deletion is tested. The file "micom_syn_data" is where the 256 communities with different abundancies are generated and PCA is perfomred to unveil the most variable and least variable reactions of each population/community. The folder "models" inside "micom" contains all .pickle community models. The file "exchanges_2" generates media-related figures of the communities. Finally the "micom_analysis" makes a qualitative analysis of a single micom reconstruction. 
+
 
 ### MICOM
 
@@ -36,33 +73,14 @@ The `models` folder contains many PICKLE files. Each of these files have a built
 
 - The `micom_syn_data.ipynb` generates 256 equally-distributed-abudances models and produces quantitative and more statistically significant data. Using PCA, it determines the most (robust/elastic) and least (preserved) variable reactions across the models. We hypothesize that the preserved reactions are highly important and that the robust reactions allows the community to adjust to the environment.
 
-### Transcriptome Data
 
-The transcriptome data used for this project is located under the 'Transcriptome Data' directory. 
-
-The "ScaledData_kmeans_Class_uMAP_X.csv" files contain the gene expression levels of each of the three sub-populations previously identified to be part of MCF Multicellular Tumor Spheroids (https://www.nature.com/articles/s41598-020-69026-7). 
-
-The "Dif_Exp_X.csv" files contain the differential expression analysis results. We use this data to get a better idea of which genes are being expressed and therefore create more accurate metabolic models.
-
-Additionally, the file named HugoV2.csv is used to map all of the metabolic genes in Recon2.2 (HUGO IDs = HGNC) to the genes on the expression matrices (gene symbols). E.g. HGNC:23647 -> ADGRE3
-
-### CORDA Generated GEMs 
-
-The resulting individual metabolic reconstructions (SBML files) are located in 'SBMLs'. These reconstructions are used as inputs to create a MICOM object, which is the engine we use to simulate a colony (diffents sub-populations and their interactions) and optimize community growth. 
-
-Newest SBML files are: 
- - cobraA_Mar16_div50_NormalObj
- - cobraB_Mar16_div50_NormalObj
- - cobraC_Mar16_div50_NormalObj
-
-The python notebooks used to run micom can be found in directory micom. The file "analysis-w-micom" is where single reaction deletion is tested. The file "micom_syn_data" is where the 256 communities with different abundancies are generated and PCA is perfomred to unveil the most variable and least variable reactions of each population/community. The folder "models" inside "micom" contains all .pickle community models. The file "exchanges_2" generates media-related figures of the communities. Finally the "micom_analysis" makes a qualitative analysis of a single micom reconstruction. 
 
 
 
 
 ## How to run the various notebooks
 
-1. Run the three `CORDA_X_Dif_Exp` notebooks to generate 3 SBML files.
+1. Run the `CORDA` notebook to generate 3 SBML files.
 2. Run `micom_fundamental` to explore the data and get familiar with it.
 3. Run `micom_syn_data` to obtain the data needed for the coming notebooks.
 4. Run `exchanges_2` to obtain a heatmap of exchange fluxes and further files needed to run the figures' producing scripts.
