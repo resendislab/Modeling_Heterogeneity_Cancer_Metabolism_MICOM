@@ -1,13 +1,4 @@
-
-# Atribution
-
-Santiago Mille\
-Jorge Arellano\
-Christian Padrón\
-Aarón Vázquez\
-Osbaldo Resendis\
-[Human Systems Biology Lab](https://resendislab.github.io/)
-
+![Copia de logosxsss (3)](https://github.com/resendislab/Modeling_Heterogeneity_Cancer_Metabolism_MICOM/assets/45723112/4e369c2c-cab2-4e9f-a9b4-c2bfe2e4248a)
 
 
 # Modeling Cancer Metabolism Heterogeneity with MICOM
@@ -75,7 +66,14 @@ The `models` folder contains many PICKLE files. Each of these files have a built
 - The `micom_syn_data.ipynb` generates 256 equally-distributed-abudances models and produces quantitative and more statistically significant data. Using PCA, it determines the most (robust/elastic) and least (preserved) variable reactions across the models. We hypothesize that the preserved reactions are highly important and that the robust reactions allows the community to adjust to the environment.
 
 
+# Atribution
 
+Santiago Mille\
+Jorge Arellano\
+Christian Padrón\
+Aarón Vázquez\
+Osbaldo Resendis\
+[Human Systems Biology Lab](https://resendislab.github.io/)
 
 
 
