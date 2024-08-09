@@ -46,6 +46,16 @@ The SBML files are:
  - cobraC.xml
 
 
+
+### How to run
+
+1. The 'MICOM' folder contains all the material needed to run the modeling, for practicality purposes the code is designed to be run in Google Colab. 
+2 The Scripts folder contains the notebooks to model the community, essentiality analysis, gradients and instructions to visualize the results. 
+3 Input_files contains the original xml files and the modified gradients.
+
+
+
+
 # Atribution
 
 Jorge Enrique Arellano\
