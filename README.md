@@ -6,6 +6,12 @@
 Through the implementation of single cell sequencing technologies (scRNASeq) we were able to characterize the presence of 3 subpopulations in a Multicellular Tumor Spheroids of MCF-7 with invasive, proliferative and reservoir characteristics. [background](https://www.nature.com/articles/s41598-020-69026-7). 
 
 The Community modeling was performed using the  [MICOM](https://journals.asm.org/doi/10.1128/mSystems.00606-19) tool.
+### MICOM
+
+#### What is it?
+With the GEMs generated from the previos step, we can create a MICOM object. MICOM is a Python package for metabolic modeling of cellular communities. `micom` allows you to construct a community model from a list on input COBRA models and manages exchange fluxes between individuals and between individuals with the environment. It explicitly accounts for different abundances of individuals in the community and can thus incorporate data from sc-rRNA sequencing experiments. It allows optimization with a variety of algorithms modeling the trade-off between egoistic growth rate maximization and cooperative objective
+
+MICOM docs: https://resendislab.github.io/micom/
 
 
 
@@ -43,12 +49,7 @@ The SBML files are:
 The python notebooks used to run micom can be found in directory micom. The file "analysis-w-micom" is where single reaction deletion is tested. The file "micom_syn_data" is where the 256 communities with different abundancies are generated and PCA is perfomred to unveil the most variable and least variable reactions of each population/community. The folder "models" inside "micom" contains all .pickle community models. The file "exchanges_2" generates media-related figures of the communities. Finally the "micom_analysis" makes a qualitative analysis of a single micom reconstruction. 
 
 
-### MICOM
 
-#### What is it?
-With the GEMs generated from the previos step, we can create a MICOM object. MICOM is a Python package for metabolic modeling of cellular communities. `micom` allows you to construct a community model from a list on input COBRA models and manages exchange fluxes between individuals and between individuals with the environment. It explicitly accounts for different abundances of individuals in the community and can thus incorporate data from sc-rRNA sequencing experiments. It allows optimization with a variety of algorithms modeling the trade-off between egoistic growth rate maximization and cooperative objective
-
-MICOM docs: https://resendislab.github.io/micom/
 
 #### Data
 Under the `data` directory, you will find different files needed to run python scripts (`scripts_figures`) to produce figures like the ones of the micom paper (https://github.com/micom-dev/paper). For more detail on how to produce each file or what they do please visit the github of `micom-dev/paper`. You should also be able to find information on the scripts.
