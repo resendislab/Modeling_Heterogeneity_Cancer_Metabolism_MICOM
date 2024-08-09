@@ -5,9 +5,11 @@
 
 Through the implementation of single cell sequencing technologies (scRNASeq) we were able to characterize the presence of 3 subpopulations in a Multicellular Tumor Spheroids of MCF-7 with invasive, proliferative and reservoir characteristics. [background](https://www.nature.com/articles/s41598-020-69026-7). 
 
-To couple the metabolic activity for the three subpopulations we used [MICOM](https://journals.asm.org/doi/10.1128/mSystems.00606-19). You can download the modified version of micom that works with Recon2.2 from https://github.com/SantiagoMille/micom.
-Once you have downloaded the modified micom, install it as a python package in your conda/pyenv enviroment. 
-> Run `pip install -e .` in the code's directory.
+The Community modeling was performed using the  [MICOM](https://journals.asm.org/doi/10.1128/mSystems.00606-19) tool.
+
+
+
+
 
 ## Optimizer
  To run CORDA you must install Gurobi Optimizer https://www.gurobi.com/documentation/9.1/quickstart_mac/software_installation_guid.html. You can obtain a free academic license. 
