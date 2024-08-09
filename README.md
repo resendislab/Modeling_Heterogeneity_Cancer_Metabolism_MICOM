@@ -36,9 +36,9 @@ Additionally, the file named HugoV2.csv is used to map all of the metabolic gene
 The resulting individual metabolic reconstructions (SBML files) are located in 'SBMLs'. These reconstructions are used as inputs to create a MICOM object, which is the engine we use to simulate a colony (diffents sub-populations and their interactions) and optimize community growth. 
 
 The SBML files are: 
- - cobraA.xml
- - cobraB.xml
- - cobraC.xml
+ - cobraA.xml = ModelA.xml = Invasive cells
+ - cobraB.xml = ModelB.xml = Reservoir cells
+ - cobraC.xml = ModelC.xml = Proliferative cells
 
 
 
