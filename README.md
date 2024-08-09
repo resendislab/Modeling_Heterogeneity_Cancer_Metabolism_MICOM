@@ -14,13 +14,8 @@ With the GEMs generated from the previos step, we can create a MICOM object. MIC
 MICOM docs: https://resendislab.github.io/micom/
 
 
-
-
-
 ## Optimizer
  To run CORDA you must install Gurobi Optimizer https://www.gurobi.com/documentation/9.1/quickstart_mac/software_installation_guid.html. You can obtain a free academic license. 
-
-## Imputation
 
 ## Genome-Scale Metabolic Models (GEMs) Jupyter Notebooks
 
@@ -49,9 +44,9 @@ The SBML files are:
 
 ### How to run
 
-1. The `MICOM` folder contains all the material needed to run the modeling, for practicality purposes the code is designed to be run in Google Colab. 
-2 The `Scripts` folder contains the notebooks to model the community, essentiality analysis, gradients and instructions to visualize the results. 
-3 `Input_files` contains the original xml files and the modified gradients.
+1. The `MICOM` folder contains all the material needed to run the modeling, for practicality purposes the code is designed to be run in Google Colab.\ 
+2 The `Scripts` folder contains the notebooks to model the community, essentiality analysis, gradients and instructions to visualize the results.\
+3 `Input_files` contains the original xml files and the modified gradients.\
 
 
 
