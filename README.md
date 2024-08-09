@@ -3,7 +3,7 @@
 
 # Modeling Cancer Metabolism Heterogeneity with MICOM
 
-Given previous results, we characterized the heterogeneity in Multicellular Tumor spheroids in three subpopulations, a proliferative, a reservoir, and an invasive. Each one has complementary and nonredundant roles; you can check the publication [here](https://www.nature.com/articles/s41598-020-69026-7). Moreover, we were interested in evaluating the metabolic pathways in each subpopulation and how the metabolic routes complement each other.
+Through the implementation of single cell sequencing technologies (scRNASeq) we were able to characterize the presence of 3 subpopulations in a Multicellular Tumor Spheroids of MCF-7 with invasive, proliferative and reservoir characteristics. [background](https://www.nature.com/articles/s41598-020-69026-7). 
 
 To couple the metabolic activity for the three subpopulations we used [MICOM](https://journals.asm.org/doi/10.1128/mSystems.00606-19). You can download the modified version of micom that works with Recon2.2 from https://github.com/SantiagoMille/micom.
 Once you have downloaded the modified micom, install it as a python package in your conda/pyenv enviroment. 
